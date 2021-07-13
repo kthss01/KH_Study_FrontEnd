@@ -1,0 +1,138 @@
+/* 기본속성 선택자 테스트 */
+/* div 중에서 name 속성값이 name2와 일치하는 태그 */
+div[name=name2] {
+    background-color: orangered;
+}
+
+/* div 중 name 속성안에 name1이 포함되어 있는 태그 (띄어쓰기로 구분) */
+div[name~=name1] {
+    background-color: yellow;
+}
+/* div[class~=class] {
+    background-color: green;
+} */
+
+/* div 중 class 속성안에 class로 시작되는 태그 (- 구분) */
+div[class|=class] {
+    background-color: cyan;
+}
+
+/* div 중에서 name 속성이 name으로 시작되는 태그*/
+div[name^=name] {
+    background-color: blue;
+}
+/* div[class^=class] {
+    background-color: blue;
+} */
+
+/* div 중에서 class 속성이 class로 끝나는 태그 */
+div[class$=class] {
+    color: white;
+}
+
+/* div 중에서 class 속성이 i 를 포함하는 태그 */
+div[class*=i] {
+    background-color: yellow;
+    color: red;
+}
+
+/* 클래스가 div-class인 것 중에서 name 속성값에 name3이 포함되어 있는 경우 */
+.div-class[name~=name3] {
+    background-color: pink;
+}
+
+
+/* *************************************************************** */
+/* **************** 자손선택자와 후손선택자 *************** */
+
+/* a>b : a를 부모로 가지고 있는 b들을 선택 */
+#test1>h4 {
+    background-color: powderblue;
+}
+
+/* #test1>li 안됨 */
+#test1>ul>li {
+    background-color: royalblue;
+}
+
+/* a b : a 안에 있는 모든 b를 선택 */
+#test1 li {
+    color: red;
+}
+
+
+/* *************************************************************** */
+/* **************** 동위선택자 *************** */
+
+#div-test {
+    background-color: red;
+}
+
+/* a+b : a선택자 바로 뒤에 있는 b선택자 단 한 개 */
+#div-test+div {
+    background-color: yellow;
+}
+
+/* a~b : a선택자 뒤에있는 모든 b선택자 */
+/* 이게 우선순위가 더 높은거 같음 뒤에있는 모든 선택자가 무조건 violet이 됨 */
+/* #div-test~div {
+    background-color: violet;
+} */
+
+
+/* 적용되는 갯수가 더 많으면 우선순위가 높은거 같음 */
+/* #active-test {
+    background-color: blue;
+} */
+
+
+/* *************************************************************** */
+/* **************** 반응선택자 *************** */
+
+/* 이건 아래 적혀있지만 저 위에 있는걸로 적용됨 */
+#active-test, #hover-test {
+    background-color: yellowgreen;
+    width: 300px;
+    height: 300px;
+}
+
+#active-test:active {
+    background-color: yellow;
+    color: red;
+}
+
+#hover-test:hover {
+    background-color: cyan;
+    color: red;
+    cursor: pointer;
+}
+
+/* *************************************************************** */
+/* **************** 상태선택자 *************** */
+
+input[type="checkbox"]:checked {
+    width: 20px;
+    height: 20px;
+}
+
+input[type="checkbox"]:checked+label {
+    font-size: 20px;
+}
+
+#userId:focus, #password:focus {
+    background: red;
+}
+
+option:disabled {
+    background-color: red;
+    color: white;
+}
+
+option:enabled {
+    background-color: yellowgreen;
+}
+
+button:enabled {
+    color: red;
+}
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우선순위</title>
+    <style>
+        h1 {
+            color: yellow;
+        }
+        h1 {
+            background-color: green;
+            color: red;
+        }
+        #test1 {
+            background-color: yellowgreen;
+            color: white;
+        }
+        .test1 {
+            /* 클래스가 아이디보다 우선순위가 낮아서 적용안됨 */
+            background-color: pink;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            /* 위에 아이디로 이미 적용했기에 우선순위 낮아서 적용안됨 */
+            background-color: orangered;
+        }
+        span {
+            /* 인라인이라 적용안됨 */
+            /* width: 300px;
+            height: 300px; */
+            background-color: olivedrab;
+        }
+        .test2 {
+            background-color: black;
+            color: white;
+        }
+        p {
+            /* 클래스로 이미 적용했기에 우선순위 낮아서 적용안됨 */
+            /* background-color: red; */
+            /* 이렇게 important하면 제일 높음 */
+            background-color: red !important;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>선택자우선순위</h1>
+    <p>
+        기본적으로 <span>css 속성 </span><span>은 위에서 아래로부터 적용</span>되지만,
+        같은 태그에 다양한 선택자로 css 속성이 설정된 경우에는 우선순위에 따라 스타일이 적용된다
+    </p>
+    <pre>태그선택자 < 클래스선택자 < 아이디선택자 < 인라인선택자 < !important 순서로 우선순위 적용</pre>
+
+    <hr>
+
+    <h2>선택자우선순위 테스트</h2>
+
+    <div id="test1" class="test1">우선순위 테스트</div>
+    <p id="test2" class="test2">우선순위 테스트2</p>
+</body>
+</html>

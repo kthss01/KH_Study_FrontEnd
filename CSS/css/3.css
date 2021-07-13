@@ -1,0 +1,125 @@
+/* *************************일반구조선택자********************* */
+/* 위치로 구분 */
+
+/* 형제관계 태그 중 첫번째 태그 선택 */
+#test1 p:first-child {
+    background-color: red;
+    color: white;
+}
+
+/* 형제관계 태그 중 마지막 태그 선택 */
+#test1 p:last-child {
+    /* 적용안됨 마지막 태그가 p 태그가 아니기 때문 */
+    background-color: yellow;
+    color: white;
+}
+
+/* 형재관계 태그 중 앞에서 수열번째 태그 선택 */
+/* 짝수: 2n 홀수: 2n-1 */
+#test1 p:nth-child(2n) {
+    /* 짝수번째만 선택 */
+    background-color: yellow;
+    color: white;
+}
+
+/* 형재관계 태그 중 뒤에서 수열번째 태그 선택 */
+#test1 p:nth-last-child(4) {
+    background-color: skyblue;
+    color: white;
+}
+
+/* ************************************************************* */
+/* *************************형태구조선택자********************* */
+/* 태그로 구분한다고 보면됨 */
+
+/* 형제 관계 태그 중에서 첫번째 태그 선택 */
+#test2 p:first-of-type {
+    /* p태그 중에서 처음 */
+    background-color: red;
+    color: white;
+}
+
+/* 형제 관계 태그 중에서 마지막 태그 선택 */
+#test2 p:last-of-type {
+    /* p태그 중에서 마지막 */
+    background-color: orange;
+    color: white;
+}
+
+/* 형재관계 태그 중 앞에서 수열번째 태그 선택 */
+/* 짝수: 2n 홀수: 2n-1 */
+#test2 p:nth-of-type(2n) {
+    /* p태그 중 짝수번째만 선택 */
+    background-color: yellowgreen;
+    color: white;
+}
+
+/* 형재관계 태그 중 뒤에서 수열번째 태그 선택 */
+#test2 p:nth-last-of-type(3) {
+    background-color: skyblue;
+    color: white;
+}
+
+/* ************************************************************* */
+/* *************************문자선택자********************* */
+
+/* :: : 차이 ::은 ie8이하버전은 적용이 되지 않는다고함 
+    css2에선 : 하나 썼고
+    css3에선 :: 쓰는걸로 바뀌었다고함
+*/
+
+/* 첫번째 글자 선택 */
+#test3 p::first-letter {
+    /* 1em :  16px */
+    font-size: 2em;
+}
+
+/* 첫번째 줄 선택 */
+/* 네이버 웨일에선 이거 가상요소에도 먹혀버림 */
+#test3 p::first-line {
+    background-color: cyan;
+}
+
+/* 태그 뒤에 위치하는 공간 선택 (가상요소 선택자) : 내용삽입 
+    (인라인 요소 (글자요소))
+*/
+/*
+    가상요소를 사용하고자 한다면
+    content: ""; 이런식으로 빈값을 넣어줘야함
+*/
+#test3 p::after {
+    content: "@@@태그뒤에 추가"; 
+    /* content: ""; */
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#test3 p::before {
+    /* 태그 앞에 추가 */
+    content: "1.";
+}
+
+/* 사용자가 드래그한 글자 선택 */
+#test3 p::selection {
+    background: red;
+    color: white;
+}
+
+/* ************************************************************* */
+/* *************************부정선택자********************* */
+
+/* 홀수의 반대 짝수가 선택된 거 */
+#test4 p:not(:nth-child(2n-1)) {
+    background: orange;
+}
+
+/* 태그별로 자동번호 매겨주는 속성 */
+#test4 p {
+    /* counter 이름을 rint로 정한거 */
+    counter-increment: rint;
+}
+#test4 p::before {
+    content: counter(rint) ". ";
+}
