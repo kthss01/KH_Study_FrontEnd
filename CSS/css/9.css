@@ -1,0 +1,92 @@
+body {
+    background-color: aqua;
+    background-color: rgb(153, 130, 160);
+    /* rgba 안해도 먹히는거 같다고함 */
+    background-color: rgb(153, 130, 160, 0.7);
+    background-color: hsl(294, 59%, 84%);
+    background-color: hsla(294, 59% 84%, .5);
+    background-color: #00CED1;
+    /* 배경 투명해짐 */
+    /* background-color: transparent; */
+}
+
+#div-bg {
+    width: 50%;
+    background-color: white;
+}
+
+.div-test {
+    background-color: yellow;
+    border: 5px dashed black;
+
+    /* div 영역 밖 두께 - 요소와 요소 사이의 간격 */
+    margin: 30px;
+    /* div 영역 안 두께 */
+    padding: 20px;
+    width: 20%;
+    /* 해당 객체를 왼쪽부터 정렬하는 속성 */
+    float: left;
+}
+
+/* 이건 점선까지 참 */
+#div1 {
+    /* 기본 (테두리까지 포함) */
+    background-clip: border-box;
+}
+/* 이건 점선 안까지만 참 */
+#div2 {
+    /* 패딩까지만 */
+    background-clip: padding-box;
+}
+#div3 {
+    /* 내용까지만 */
+    background-clip: content-box;
+}
+
+/* 배경 이미지 */
+#bg-img {
+    width: 70%;
+    height: 800px;
+    border: 1px solid black;
+
+    background-image: url("../sample/image/bgsample.PNG");
+
+    background-repeat: repeat;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+
+    background-size: auto;
+    /* 사이즈에 맞게 가득 참 */
+    background-size: contain;
+    /* 더 넓은 범위에 맞춤 */
+    background-size: cover;
+    background-size: 150px 100px;
+    /* background-size: 80% 80%; */
+
+    background-position: left top;
+    background-position: right top;
+    background-position: center top;
+
+    background-position: left bottom;
+    background-position: right bottom;
+    background-position: center bottom;
+
+    background-position: left center;
+    background-position: right center;
+    background-position: center center;
+
+    background-position: 30px 50px;
+    background-position: 50% 50%;
+
+    background-attachment: fixed;
+    background-attachment: scroll;
+}
+
+#bg-all {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+
+    background: url(../sample/image/iconsample.PNG);
+}

@@ -1,0 +1,35 @@
+#ul1 {
+    /* 검은 원 */
+    list-style-type: disc;
+    /* 빈 원 */
+    list-style-type: circle;
+    /* 사각형 */
+    list-style-type: square;
+    /* 없는거 */
+    list-style-type: none;
+}
+
+#ol1 {
+    /* 1부터 시작 */
+    list-style-type: decimal;
+    /* 01부터 시작 */
+    list-style-type: decimal-leading-zero;
+    list-style-type: decimal-leading-zero;
+    list-style-type: lower-roman;
+    list-style-type: upper-roman;
+    list-style-type: upper-alpha;
+    list-style-type: lower-alpha;
+}
+
+#position { 
+    list-style-type: lower-alpha;
+    /* 하나 들여쓰기 됨 */
+    list-style-position: inside;
+    list-style-position: outside;
+}
+
+/* 이미지 크면 벗어나니 가로 세로 10px 정도가 적당해보인다고 하심 */
+#image-bullet {
+    list-style-image: url(../sample/image/iconsample.PNG);
+    list-style-position: inside;
+}
