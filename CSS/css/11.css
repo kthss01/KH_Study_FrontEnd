@@ -1,0 +1,130 @@
+.size-test {
+    border: 2px solid red;
+}
+
+#test1 {
+    width: 800px;
+    height: 200px;
+}
+
+#test2 {
+    /* width: 50%; */
+    /* max-width: none; */
+    /* max-width: 600px; */
+
+    height: 200px;
+}
+
+.block {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    color: white;
+}
+
+.area1 {background-color: red;}
+.area2 {background-color: orange;}
+.area3 {background-color: yellow;}
+.area4 {background-color: green;}
+.area5 {background-color: blue;}
+
+.block-test1 {
+    display: inline;
+}
+
+/* 안에 내용이 block */
+.block-test2 {
+    display: inline-block;
+}
+
+.block-test3 {
+    display: block;
+}
+
+.container4 {
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+    /* container 개념이 되고 그 안에 요소들은 item 개념이 됨 */
+    display: flex;
+    
+    /* 좌에서 우로 */
+    /* flex-direction: row;  */
+    /* 위에서 아래로 주축이 바뀜 */
+    /* flex-direction: column;  */
+    /* reverse도 가능 */
+    flex-direction: row-reverse;
+
+    /* default nowrap */
+    /* nowrap 강제 한 줄 배치 */
+    /* flex-wrap: nowrap; */
+    /* 아래로 내려옴 원사이즈 대로 나옴 두 줄 이상이 될 수 있음 */
+    /* flex-wrap: wrap; */
+
+    /* default인 nowrap에선 안먹힘 */
+    /* 한 열에 대한 정렬에 사용 - 수평에 대한 배치*/
+    /* 끝점 기준으로 시작을 할지 */
+    /* flex-end 하면 끝에 붙어서 정렬됨 */
+    /* justify-content: flex-end; */
+    /* 왼쪽 정렬 */
+    /* justify-content: flex-start; */
+    /* 가운데 정렬 */
+    justify-content: center;
+
+    /* default인 nowrap에선 안먹힘 */
+    /* 한 행에 대한 정렬에 사용 - 수직에 대한 배치*/
+    /* align-content: center; */
+    /* 맨 아래부터 붙어서 시작 */
+    /* align-content: flex-end;  */
+
+    /* nowrap일땐 이거 사용 */
+    align-items: center;
+}
+
+
+.container4 .block-test4 {
+    /* width: 10px; */
+
+    /* grow 비율을 의미 */
+    /* 화면 상의 비율대로 분배 */
+    /* 0이 기본값. 1로 하면 증가함 */
+    /* flex-grow: 1; */
+    /* 아이템의 초기길이 설정할 때 기본값 0으로 세팅 */
+    /* 기본값은 auto임 */
+    /* 문자열의 길이대로 하기 영역을 잡기 위해서 0으로 한거 */
+    /* flex-basis: 0; */
+    /* 컨테이너가 작아질 때 아이템 너비 감소 */
+    width: 200px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.container4 .block-test4:nth-child(3) {
+    flex-grow: 2;
+}
+
+.container4 .block-test4:nth-child(2) {
+    /* 맨 앞으로 보내려면 기본값보다 작게 */
+    /* 기본값은 0으로 되있다고함 */
+    order:-1;
+}
+
+.container4 .block-test4:nth-child(4) {
+    /* 기본값은 0으로 되있다고함 */
+    /* 더 작은 값을 주니까 더 앞으로가게됨 */
+    order:-2; 
+}
+
+.container4 .block-test4:nth-child(5) {
+    /* 원래 값보다 더 작아지게됨 */
+    /* 얼마나 작아지는지는 알 수 없는거 같아보임 */
+    /* 0이면 안줄어드는데 양수를 주면 줄어들음 */
+    flex-shrink: 2;
+}
+
+.container5 {
+    /* width: 500px; */
+    height: 800px;
+    background-color: orange;
+    display: inline-flex;
+}

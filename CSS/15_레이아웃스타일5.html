@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃스타일5</title>
+
+    <style>
+        /* td {
+            width: 130px;
+            height: 80px;
+            padding-right: 10px;
+        }
+
+        tfoot td {
+            height: 150px;
+        } */
+        table {
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+
+            /* 테두리 하나로 표현할지 2개로 표현 할지 */
+            /* border-collapse: separate; */
+            /* border-collapse: collapse; */
+
+            /* 테두리 사이의 거리 지정 */
+            /* border-spacing: 50px 50px; */
+
+            /* 빈셀 볼지 안볼지 */
+            /* empty-cells: hide; */
+
+            /* 테이블 레이아웃 고정하면 글들이 튀어나옴 */
+            table-layout: fixed;
+            /* 이거 설정하면 안으로 들어옴 */
+            word-break: break-all;
+        }
+        table td {
+            width: 80px;
+            border: 1px solid black;
+            text-align: center;
+            /* 수직 정렬 */
+            vertical-align: top;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <table border="1"> -->
+    <table>
+        <caption>성적표</caption>
+        <!-- <thead> -->
+            <tr>
+                <td>구분</td>
+                <td>점수</td>
+            </tr>
+        <!-- </thead> -->
+
+        <!-- <tbody> -->
+            <tr>
+                <td>수학</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td>90</td>
+            </tr>
+        <!-- </tbody> -->
+
+        <!-- <tfoot> -->
+            <tr>
+                <td></td>
+                <td>하나둘셋넷다섯여섯일곱여덟아홉열1111111111111111111111111111111111111</td>
+            </tr>
+        <!-- </tfoot> -->
+    </table>
+</body>
+
+</html>

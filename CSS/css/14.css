@@ -1,0 +1,17 @@
+.wrap {
+    border: 1px solid black;
+    height: 300px;
+}
+
+.column1 {
+    column-width: 300px;
+    column-gap: 50px;
+    /* hidden 안보여줌 auto 넘치면 스크롤 생김 기본값 visible */
+    overflow: scroll;
+}
+
+.column2 {
+    column-count: 3;
+    column-rule-style: dotted;
+    overflow: scroll;
+}
