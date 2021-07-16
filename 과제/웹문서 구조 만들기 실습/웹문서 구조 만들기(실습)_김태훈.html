@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹문서 구조 만들기(실습)_김태훈</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="logo"><img src="./img/logo.jpg" alt="logo"></div>
+            <div id="mainlogo"><img src="./img/mainlogo.jpg" alt="mainlogo"></div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Board</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <aside class="content1">
+            <img src="./img/left_img.jpg" alt="leff_img">
+        </aside>
+
+        <section class="content2">
+            <article><img src="./img/main_img1.jpg" alt="maing_img1">나무를 심는 사람들</article>
+            <article><img src="./img/main_img2.jpg" alt="maing_img2">아이들에게 녹색미래를..</article>
+            <article><img src="./img/main_img3.jpg" alt="maing_img3">설악산을 살리는 길</article>
+            <article><img src="./img/main_img4.jpg" alt="maing_img4">사라지는 북극곰들</article>
+        </section>
+
+        <aside class="content3">
+            <form class="login" action="" method="get">
+                <div class="loginInfo">
+                    <input type="text" id='userId' name='userId' placeholder="ID를 입력하세요.">
+                    <input type="password" id='password' name='password' placeholder="PW를 입력하세요.">
+                    <button name="loginBtn">로그인</button>
+                </div>
+                <div>
+                    <a href="#">회원가입</a>
+                    <a href="#">ID/PW 찾기</a>
+                </div>
+            </form>
+
+            <div>
+                <img src="./img/right_img.jpg" alt="right_img">
+                <img src="./img/me_chat.jpg" alt="me_chat">
+            </div>
+        </aside>
+
+        <footer>
+            <img src="img/footer.JPG" alt="footer">
+        </footer>
+    </div>
+</body>
+</html>

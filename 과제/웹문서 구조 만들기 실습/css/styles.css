@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+
+}
+
+
+/* header */
+header {
+    text-align: center;
+}
+
+#logo {
+    float: left;
+    margin-left: 5%;
+}
+
+#mainlogo {
+    margin-right: 15%;
+}
+
+
+/* nav */
+nav {
+    clear: both;
+    background-color: rgb(100, 173, 21);
+    margin-bottom: 10px;
+}
+nav ul {
+    list-style-type: none;    
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+}
+nav ul li {
+    background-color: #1123;
+    float: left;
+    width: 15%;
+    margin-left: 3%;
+    margin-right: 5%;
+    line-height: 40px;
+    font-size: 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+nav ul li a:hover {
+    color: #000;
+}
+
+.content1 {
+    /* background-color: blue; */
+    float: left;
+    width: 15%;
+}
+.content1 img {
+    width: 100%;
+}
+
+.content2 {
+    /* background-color: red; */
+    float: left;
+    width: 60%;
+    /* margin: 1%; */
+}
+.content2 article {
+    float: left;
+    /* background-color: green; */
+    width: 46%;
+    margin: 2%;
+    text-align: center;
+}
+.content2 img {
+    width: 100%;
+}
+
+.content3 {
+    /* background-color: yellow; */
+    float: left;
+    width: 25%;
+}
+.content3 .login {
+    /* background-color: green; */
+    margin-bottom: 20px;
+    float: left;
+}
+.login .loginInfo {
+    clear: both;
+    text-align: left;
+    /* background-color: #444; */
+    position: relative;
+}
+.login input {
+    width: 70%;
+    height: 25px;
+}
+.login button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: 50px;
+    /* background-color: #333; */
+}
+.login div {
+    text-align: center;
+}
+.login div a {
+    margin: 10px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.content3 img {
+    width: 100%;
+}
+.content3 div {
+    padding-right: 10px;
+}
+
+footer {
+    clear: both;
+    /* background-color: palegoldenrod; */
+}
+footer img {
+    margin-top: 20px;
+    width: 100%;
+}
