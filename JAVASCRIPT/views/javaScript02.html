@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트의 입/출력</title>
+    <script>
+        function start() {
+            alert("문서가 로딩되었습니다.")
+        }
+    </script>
+    <style>
+        .area {
+            border: 1px solid red;
+            height: 100px;
+        }
+    </style>
+</head>
+<!-- <body onload="start();"> -->
+<body>
+    <h1>자바스크립트의 입출력</h1>
+    <script>
+
+        // window.onload = function() {
+        //     alert("문서가 로딩되었습니다.");
+        // };
+
+        /*
+        * window 객체 : 자바스크립트 내장 객체로 브라우저 창이 열릴 때 마다 
+                        하나씩 만들어지는 객체, 브라우저 창 안에 존재하는 
+                        모든 요소의 최상위 객체
+                        (즉, 모두 적용되는것이기 때문에 생략 가능)
+
+        * document 객체 : 웹 문서마다 하나씩 만들어지는 객체로 
+                            body 태그에 의해 만들어짐
+                            (HTML 문서에 대한 정보를 가지고 있다. )
+        
+        1. 데이터 출력하는 기본 구문
+        1) [window.]alert("알람창에 띄워줄 문구"); <br>
+        2) document.write("화면에 띄워줄 문구"); <br>
+        3) [window.]console.log("콘솔창에 띄워줄 문구"); <br>
+        4) 요소.innerHTML = "요소내용 변경할 문구";  (요소에 출력)
+
+        
+        2. 데이터 입력받는 기본 문구 (변수에 기록도 가능)
+        1) 변수 = [window.]confirm("질문내용"); <br>
+        2) 변수 = [window.]prompt("질문내용"); <br>
+        3) 변수 = 요소.innerHTML; <br>
+        4) 변수 = input요소.value; 
+
+        // window.onload : 페이지가 로드된 직후 바로 실행
+        */
+    </script>
+
+    <h3>innerHTML 요소의 내용 변경하기</h3>
+    <div id="area1" class="area">자바스크립트에서 엘리먼트 값을 읽어가거나 값을 변경할 때 innerHTML 속성 사용</div><br>
+
+    <button onclick="checkValue();">innerHTML</button>
+    <script>
+        function checkValue() {
+            const area1 = document.getElementById("area1");
+            console.log(area1);
+            console.log(area1.innerHTML);
+            area1.innerHTML = "innerHTML 속성으로 값 변경함 <br> 여러 줄 작성할 수 있음";
+            // innerText는 문자열로 그냥 들어감 태그 안먹힘
+            // area1.innerText = "innerHTML 속성으로 값 변경함 <br> 여러 줄 작성할 수 있음";
+        }
+    </script>
+
+    <hr>
+
+    <h3>console.log()로 개발자도구 콘솔화면에 출력하기</h3>
+    <button onclick="printConsole();">콘솔에 내용출력</button>
+    <script>
+        // const 상수
+        // let 변동이 있을 변수 앞에다 붙임
+        function printConsole() {
+            let sum;
+            const num1 = 3;
+            const num2 = 3;
+
+            sum = num1 + num2;
+            console.log(sum);
+        }
+    </script>
+
+    <hr>
+
+    <script>
+        document.write("<h1> document.write()로 출력함 </h1>");
+
+        function test1() {
+            // 내용이 다 지워짐
+            // 내용이 다 로드되고 난 다음에 write하면 로딩된 데이터 다 지우고 출력
+            // 웹페이지의 모든 내용이 로딩된 후에 실행되면 로딩된 데이터를 지우고 출력함
+            document.write("<h1> document.write()로 출력함 </h1>");
+        }
+    </script>
+    <button onclick="test1();">document.write확인</button>
+
+    <h3>window.confirm()을 이용한 데이터 입력</h3>
+    <p>어떤 질문에 대해 예/아니오의 결과를 얻을 때 사용한다</p>
+    <p>확인버튼과 취소버튼이 나타나며, 확인버튼 클릭시 true, 취소버튼 클릭시 false를 리턴한다.</p>
+
+    <button onclick="checkGender();">성별확인하기</button>
+    <div id="area2" class="area"></div>
+
+    <script>
+        function checkGender() {
+            const result = confirm("남자면 확인, 여자면 취소 버튼을 누르시오");
+            console.log(result);
+
+            let gender = "";
+            if (result) {
+                gender = "남자";
+            } else {
+                gender = "여자";
+            }
+
+            const area2 = document.getElementById("area2");
+            area2.innerHTML += "당신은 " + gender + " 입니다. <br>";
+        }
+    </script>
+
+    <h3>window.prompt()을 이용한 데이터 입력</h3>
+    <p>텍스트 필드와 확인 / 취소 버튼이 있는 대화상자를 출력하고, 입력한 메세지 내용을 리턴값으로 돌려받는다</p>
+
+    <button onclick="testPrompt();">이름을 입력하세요</button>
+    <div id="area3" class="area"></div>
+
+    <script>
+        function testPrompt() {
+            const result = prompt("당신의 이름은 무엇입니까?");
+            console.log(result);
+
+            const area3 = document.getElementById("area3");
+            area3.innerHTML += result + "님 반갑습니다.<br>";
+        }
+    </script>
+
+    <h3>window.prompt()을 이용한 숫자입력 후 연산</h3>
+    <p>window.prompt)는 입력받는 텍스트를 문자열로 취급한다.</p>
+
+    <button onclick="sumTwoNumber();">계산하기</button>
+    <div id="area4" class="area"></div>
+
+    <script>
+        function sumTwoNumber() {
+            const num1 = Number(prompt("첫번째 숫자 입력"));
+            const num2 = Number(prompt("두번째 숫자 입력"));
+            // 생성자 함수 만들때 파스칼케이스 형식으로 Number 이렇게 만듬
+            // 앞으로 우리가 생성자 함수 만들때도 첫글자 대문자로 해서 만들 예정
+
+            // 숫자로 바꿀 수 없는값 넘어오면 NaN이 반환됨 Not a Number
+
+            const sum = num1 + num2;
+
+            const area4 = document.getElementById("area4");
+            area4.innerHTML += "두 수의 합은 " + sum + " 입니다.<br>";
+
+            if (Number(sum)) {
+                console.log('val is a number');
+            } else {
+                console.log('Not a number');
+            }
+        }
+    </script>
+
+
+</body>
+</html>
