@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면설계</title>
+</head>
+<style>
+    form {
+        width: 450px;
+    }
+
+    label {
+        display: inline-block;
+        width: 110px;
+        font-size: 15px;
+    }
+
+    fieldset {
+        margin-bottom: 1rem;
+    }
+</style>
+<body>
+    
+    <form>
+
+        <fieldset>
+            <legend>가입 정보</legend>
+                
+            <label for="userId">아이디 : </label>
+            <input type="text" id="userId" name="userId" required><br>
+
+            <label for="userPwd">비밀번호 : </label>
+            <input type="password" id="userPwd" name="userPwd" required><br>
+
+            <label for="userPwd2">비밀번호 확인 : </label>
+            <input type="password" id="userPwd2" name="userPwd2" required><br>
+
+            <label for="userName">이름 : </label>
+            <input type="text" id="userName" name="userName"><br>
+
+            <label>성별 : </label>
+            <input type="radio" id="male" name="gender" value="m"> <label for="male">남</label>
+            <input type="radio" id="female" name="gender" value="w" checked> <label for="female">여</label><br>
+
+            <label for="email">이메일 : </label>
+            <input type="email" id="email" name="email"><br>
+        </fieldset>
+
+        <input type="submit" value="회원가입">
+    </form>
+
+</body>
+</html>
