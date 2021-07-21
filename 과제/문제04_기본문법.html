@@ -52,8 +52,29 @@
 
             // console.log(la1);
 
-            for (let food of la1.split(',')) 
-                result2.innerHTML += `${food} <br>`;
+            let result = "<ol>";
+            for (let food of la1.split(',')) { 
+                result += "<li>" + food + "</li>";
+            }
+            result += "</ol>";
+
+            result2.innerHTML = result; 
+
+            // console.log(la1.split(',').map(ele => `<li>${ele}</li>`));
+
+            result2.innerHTML = '<ol>' 
+                + la1.split(',').map(ele => `<li>${ele}</li>`).join('')
+                + '</ol>';
+
+            // result2.innerHTML = '<ol>'; // 이렇게 이것만 넣어주면 html에서 자동으로 </ol>까지 만들어버림
+            // console.log(result2.innerHTML);
+
+            // for (let food of la1.split(',')) { 
+            //     result2.innerHTML += `<li>${food}</li>`;
+            // }
+            
+            // result2.innerHTML += '</ol>'; // 이거만 넣게되는 경우 무시해버리는듯 
+            // console.log(result2.innerHTML);
     	}
 	</script>
 	
