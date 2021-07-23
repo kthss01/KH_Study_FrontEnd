@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체배열</title>
+    <style>
+        .area {
+            border: 1px solid red;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>객체배열</h1>
+    <button onclick="test1();">실행확인</button>
+    <div id="area1" class="area"></div>
+    <script>
+        function test1() {
+
+            var student0 = {
+                name : "유재석",
+                java : 90,
+                oracle : 56,
+                html5 : 30,
+                css : 44,
+                javascript : 23
+            };
+
+            var student1 = {
+                name : "김종국",
+                java : 90,
+                oracle : 70,
+                html5 : 100,
+                css : 44,
+                javascript : 23
+            };
+
+            var student2 = {
+                name : "송지효",
+                java : 100,
+                oracle : 100,
+                html5 : 100,
+                css : 100,
+                javascript : 100
+            };
+
+            var students = [];
+            students.push(student0);
+            students.push(student1);
+            students.push(student2);
+
+            console.log(students);
+
+            // 배열에 담겨있는 모든 객체에 메소드 속성 추가
+
+            for (var i = 0; i < students.length; i++) {
+                students[i].getSum = function() {
+                    return this.java + this.oracle + this.html5 + this.css + this.javascript;
+                }
+
+                students[i].getAvg = function() {
+                    return this.getSum() / 5;
+                }
+            }
+
+            for (var i in students) {
+                with (students[i]) {
+                    document.getElementById("area1").innerHTML
+                        += `이름 : ${name}, 총점 : ${getSum()}, 평균 : ${getAvg()} <br>`;
+                }
+            }
+
+            console.log(students);
+        }
+    </script>
+
+<h3>생성자 함수</h3>
+<div id="area2" class="area"></div>
+<p>new 키워드를 이용해서 객체를 생성 할 수 있는 함수</p>
+
+<button onclick="test2();">실행확인</button>
+
+<script>
+
+    // function Student(name, java, oracle, html5, css, javascript) {
+    //     this.name = name;
+    //     this.java = java;
+    //     this.oracle = oracle;
+    //     this.html5 = html5;
+    //     this.css = css;
+    //     this.javascript = javascript;
+
+    //     this.getSum = function() {
+    //         return this.java + this.oracle + this.html5 + this.css + this.javascript;
+    //     }
+
+    //     this.getAvg = function() {
+    //         return this.getSum() / 5;
+    //     }
+
+    //     this.toString = function() {
+    //         return `이름 : ${this.name}, 총점 : ${this.getSum()}, 평균 : ${this.getAvg()} <br>`;
+    //     }
+    // }
+
+    // ecma6 class 활용
+    class Student {
+        constructor(name, java, oracle, html5, css, javascript) {
+            this.name = name;
+            this.java = java;
+            this.oracle = oracle;
+            this.html5 = html5;
+            this.css = css;
+            this.javascript = javascript;
+
+            this.getSum = function() {
+                return this.java + this.oracle + this.html5 + this.css + this.javascript;
+            }
+
+            this.getAvg = function() {
+                return this.getSum() / 5;
+            }
+
+            this.toString = function() {
+                return `이름 : ${this.name}, 총점 : ${this.getSum()}, 평균 : ${this.getAvg()} <br>`;
+            }
+        }
+    }
+
+    function test2() {
+
+        var student = new Student(
+            prompt('이름을 입력하세요'),
+            parseInt(prompt('java 점수를 입력하세요')),
+            parseInt(prompt('oracle 점수를 입력하세요')),
+            parseInt(prompt('html5 점수를 입력하세요')),
+            parseInt(prompt('css 점수를 입력하세요')),
+            parseInt(prompt('javascript 점수를 입력하세요')));
+
+        var area2 = document.getElementById("area2")
+        area2.innerHTML = student;
+
+    }
+</script>
+</body>
+</html>

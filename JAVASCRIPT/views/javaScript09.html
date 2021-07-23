@@ -119,5 +119,56 @@
         }
     </script>
 
+    <h3>함수의 리턴처리</h3>
+    <button onclick="test6();">실행확인</button>
+    <p id="p6"></p>
+
+    <script>
+        // var에서는 일어나는데 let, const에선 호이스팅이 일어나지 않음
+        // 근데 undefined라고 뜸
+        // alert(test12);
+        // var test12 = 5;
+        // let test12 = 5;
+
+        // 이래도 안되는거 같긴함
+        // var value = returnFunction();
+        // p6.innerHTML = value;
+
+        function test6() {
+
+            // alert(name11);
+            var name11 = "test"; // 호이스팅 일어나서 선언식만 올라감 undefined 나옴
+            // let name11 = "test"; // referenceError
+
+            var p6 = document.getElementById("p6");
+
+            // var returnFunction = function() {
+            //     return Math.floor(Math.random() * 100) + 1;
+            // }
+
+            var value = returnFunction();
+            p6.innerHTML = value;
+
+            // 함수 선언식
+            // 함수 유효 범위 내에서 최상단으로 끌어올려짐 - 호이스팅
+            function returnFunction() {
+                return Math.floor(Math.random() * 100) + 1;
+            }
+
+            // 함수 표현식
+            // 호이스팅이 일어나지 않음
+            // 에러 발생
+            // var returnFunction = function() {
+            //     return Math.floor(Math.random() * 100) + 1;
+            // };
+        }
+
+        // 함수 밖에서 하면 됨
+        // var returnFunction = function() {
+        //         return Math.floor(Math.random() * 100) + 1;
+        // }
+
+    </script>
+
 </body>
 </html>
