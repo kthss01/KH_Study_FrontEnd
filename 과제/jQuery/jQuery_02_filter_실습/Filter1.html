@@ -8,9 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         function checkBtn() {
-            for (let i = 0; i < $("input:checked").length; i++) {
-                console.log($("input:checked").eq(i).val() + "번");
-            }
+            // for (let i = 0; i < $("input:checked").length; i++) {
+            //     console.log($("input:checked").eq(i).val() + "번");
+            // }
+            $("input:checkbox").filter(":checked").each(
+                function (index, ele) {
+                    console.log($(ele).val() + "번");
+                });
         }
     </script>
 </head>

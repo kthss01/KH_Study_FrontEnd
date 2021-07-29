@@ -23,12 +23,14 @@
             $("tr:eq(2) td").next().css("color", "yellow");
         }
         function click3() {
-            $("tr:eq(1) td:eq(1)").css("color", "yellow");
-            $("tr:eq(2) td:eq(1)").css("color", "yellow");
+            // $("tr:eq(1) td:eq(1)").css("color", "yellow");
+            // $("tr:eq(2) td:eq(1)").css("color", "yellow");
+            $("td:nth-child(2n)").not(":last").css("color", "yellow");
         }
         function click4() {
-            $("tr:eq(1) td:eq(2)").css("color", "yellow");
-            $("tr:eq(2) td:eq(2)").css("color", "yellow");
+            // $("tr:eq(1) td:eq(2)").css("color", "yellow");
+            // $("tr:eq(2) td:eq(2)").css("color", "yellow");
+            $("td:nth-child(3n)").not(":last").css("color", "yellow");
         }
     </script>
 </head>
