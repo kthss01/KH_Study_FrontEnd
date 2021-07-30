@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-2</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        function addFile() {
+            const file = $("div:first input:file");
+            // console.log(file);
+
+            // console.log(file.parent());
+
+            const clone = $("<div></div>");
+            clone.append(file.clone());
+
+            $("div:first").after(clone);
+        }  
+        function delFile() {
+            $("body").children().prevUntil("div:first").last().remove();
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="file">
+        <input type="button" value="추가" onclick="addFile();">
+        <input type="button" value="삭제" onclick="delFile();">
+    </div>
+</body>
+</html>
