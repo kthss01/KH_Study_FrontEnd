@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>effect 메소드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.2.0.js" integrity="sha256-gvMJWDHjgDrVSiN6eBI9h7dRfQmsTTsGU/eTT8vpzNg=" crossorigin="anonymous"></script>
+</head>
+<style>
+    .test1 {
+        width: 200px;
+        height: 200px;
+        background: orangered;
+    }
+
+    .test2 {
+        width: 50px;
+        height: 50px;
+        background: orange;
+    }
+</style>
+
+<body>
+    <h1>Effect 메소드</h1>
+    <p>페이지에 애니메이션 효과를 만들기위한 메소드 집합
+    </p>
+    <h3>animate()메소드</h3>
+    <div id="test1" class="test1"></div>
+    <button id="btn1">animate적용</button>
+    <script>
+        //*******************************w3schools에서 기본지원되는 속성확인
+        //https://www.w3schools.com/jquery/eff_animate.asp
+        //color같은 경우 기본적으로 지원하지 않음. 
+        //jquery-ui의 color플러그인을 import해서 사용해야함.
+        //https://api.jqueryui.com/color-animation/
+        /*
+    	color plugin은 다음속성을 지원함.
+      	* backgroundColor
+      	* borderBottomColor
+      	* borderLeftColor
+      	* borderRightColor
+      	* borderTopColor
+      	* color
+      	* columnRuleColor
+      	* outlineColor
+      	* textDecorationColor
+      	* textEmphasisColor
+
+
+        //$().메소드명([speed],[easing],[callback]);
+        //speed :실행속도(밀리세컨초) / 숫자 or slow,fast
+        //easing : 변경되는 지점별 속도 3000->3 
+        //callback : 메소드 실행후 실행할 함수 
+        
+        //color 속성은 지원하지 않아서 아래 경로에서 플러그인을  import 하여 사용하자
+        //http://code.jquery.com/#color
+
+   	*/
+
+       $(function() {
+           $("#btn1").click(function() {
+                $("#test1").animate({
+                    // background로 주면 안됨 backgroundColor로 줘야함
+                    width : "500px", backgroundColor : "blue"
+                }, 3000, function() {
+                    alert("애니메이션 적용 완료");
+                });
+           });
+       });
+    </script>
+
+</body>
+
+</html>

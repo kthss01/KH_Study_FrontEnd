@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("select[name=number]").on("change", function() {
+                // console.log($(this).val());
+
+                const content = $(this).val().length > 0 ? `${$(this).val()}번` : '';
+                $("#selNum").text(content);
+            });
+        });
+    </script>
+</head>
+<body>
+    <select name="number">
+        <option value="">== 선택 ==</option>
+        <option value="1">1번</option>
+        <option value="2">2번</option>
+        <option value="3">3번</option>
+        <option value="4">4번</option>
+    </select>
+    <span id="selNum"></span>
+</body>
+</html>

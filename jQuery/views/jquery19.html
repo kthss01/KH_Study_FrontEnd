@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시각적 효과</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</head>
+<body>
+    <h1>시각적 효과</h1>
+    <h3>show()와 hide()</h3>
+    <p>문서객체를 크게하며 보여주거나 작게하며 사라지게한다</p>
+    <button id="show">보여주기</button>
+    <button id="hide">숨기기</button>
+
+    <img src="../image/river1.PNG" id="river">
+
+    <hr>
+
+    <script>
+        $(function() {
+            $("#show").click(function() {
+                $("#river").show();
+            });
+
+            $("#hide").click(function() {
+                $("#river").hide();
+            });
+
+        });
+    </script>
+
+    <h3>toggle()</h3>
+    <p>show와 hide를 번갈아 실행하는 함수</p>
+    <button id="toggle">토글하기</button>
+
+    <img src="../image/forest1.PNG" id="forest">
+
+    <hr>
+
+    <script>
+        $(function() {
+            $("#toggle").click(function() {
+                $("#forest").toggle(1000, function() {
+                    alert("토글 완료");
+                });
+            });
+        });
+    </script>
+
+    <h3>slideDown() slideUp()</h3>
+    <div class="menu">반품 언제되나요?</div>
+    <p class="content">지금 확인 중입니다</p>
+    <div class="menu">상품 위치를 확인하고 싶습니다</div>
+    <p class="content">배송 조회로 확인 부탁드립니다</p>
+
+    <script>
+        $(function() {
+            // $(".content").slideUp(1000);
+            $(".menu").click(function() {
+                // $(this).next("p").slideDown();
+
+                $(this).next('p').slideToggle(1000, function() {
+                    alert("슬라이드 토글 완료");
+                });
+            })
+        })
+    </script>
+
+    <h3>fadeIn()과 fadeOut()</h3>
+    <button id="fadeIn">fadeIn()</button>
+    <button id="fadeOut">fadeOut()</button>
+    <button id="fadeToggle">fadeToggle()</button>
+
+    <br>
+    
+    <img src="../image/flower1.PNG" id="flower">
+
+    <hr>
+
+    <script>
+        $(function() {
+            $("#fadeIn").click(function() {
+                $("#flower").fadeIn(1500);
+            });
+
+            $("#fadeOut").click(function() {
+                $("#flower").fadeOut(1500);
+            });
+
+            $("#fadeToggle").click(function() {
+                $("#flower").fadeToggle(1500, function() {
+                    alert("fadeToggle 확인");
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
