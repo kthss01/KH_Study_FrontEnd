@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>그리드 레이아웃</title>
+	<style>
+		.row1 {
+			border: 1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:100px;
+			background: orange;
+		}
+		.row2 {
+			border:1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:150px;
+			background: palegreen;
+		}
+		.row3 {
+			border:1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:200px;
+			background:skyblue;
+		}
+		.for-xs {
+			border:1px solid black;
+			font-size: 20px;
+			height:150px;
+			background:pink;
+		}
+		h3 {
+			color:red;
+		}
+	</style>
+</head>
+<body>
+
+<!-- 부트스트랩의 그리드 시스템은 페이지 전체에 최대 12개의 열을 허용
+	12개의 열들을 개별적으로 사용할 수도 있고 그룹화해서 더 넓은 열을 만들수도 있다.
+	부트스트랩의 그리드 시스템은 반응형이다. (반응형은 데스크탑, 테블릿, 스마트폰 등 다양한 기기에서 컨텐츠가 제대로 보이게하는 기술)
+	그래서 화면 크기에 따라 열이 재정렬됨. .
+-->
+
+
+<!-- 그리드 시스템에는 4가지 클래스 존재
+	xs : 휴대폰 - 너비가 768px 미만인 화면
+	sm : 태블릿 - 너비가 768px 이상인 화면
+	md : 소형 노트북 - 너비가 992px 이상인 화면
+	lg : 노토북 및 데스크탑 - 너비가 1200px 이상인 화면
+
+	* 각 클래스는 확장되므로 xs와 sm에 대해 동일한 너비를 설정하려면 xs만 지정
+	
+	 md 많이사용
+-->
+
+<!-- 그리드 시스템 규칙
+	 .container 또는 .container-fluid 클래스가 필요
+	 1행을 표현할 때는 row 클래스 사용
+	 그리드를 표현하고자 할때 col-크기-값 형태로 표현
+	 그리드의 총 값은 12이며, 1행의 열의 합산값이 12가 되도록 해주면 된다.
+	ex) col-xs-*, col-md-*, col-sm-*, col-lg-*
+-->
+
+<h1 align="center">가변 그리드 레이아웃</h1>
+<!-- 모바일 폰(매우작은 기기) xs , 태블릿(작은기기) sm , 노트북(중간기기) md, 데스크탑(큰 기기) lg-->
+<h3 align="center" class="hidden-md hidden-sm hidden-xs">현재 화면은 데스크탑 전용입니다.</h3>
+<!-- lg만 숨기지 않음 => 데스크탑 전용 -->
+<h3 align="center" class="hidden-lg hidden-sm hidden-xs">현재 화면은 노트북 전용입니다.</h3>
+<!-- md만 숨기지 않음 => 노트북 전용 -->
+<h3 align="center" class="hidden-lg hidden-md hidden-xs">현재 화면은 태블릿 전용입니다.</h3>
+<!-- sm만 숨기지 않음 => 태블릿 전용 -->
+<h3 align="center" class="hidden-lg hidden-md hidden-sm">현재 화면은 스마트폰 전용입니다.</h3>
+<!-- xs만 숨기지 않음 => 스마트폰 전용 -->
+
+<br>
+<!-- 그리드 레이아웃 빨리 만드는법
+.row -> enter 하면 row  클래스 div가 만들어짐
+.col-sm-4 -> enter 하면 col-sm-4 클래스 div가 만들어짐
+-->
+
+<!-- 그리드 레이아웃 기본 구조
+	container 클래스 div 생성 후 
+	행(row 클래스 div) 생성
+	그 다음 원하는 수의 열(.col-*-* 이런식)을 추가 
+	
+-->
+
+<div class="row">
+	<!-- orange(row1)
+		데스크탑사이즈(lg)에서는 가로를 1씩 차지하기 때문에 오렌지 박스가 1줄 12개가 다 담긴다.
+		 노트북 사이즈(md)에서는 가로를 2씩 차지하기 때문에 오렌지 박스가 6개식 2줄 생긴다.
+		 태블릿 사이즈(sm)에서는 가로를 3씩 차지하기 때문에 오렌지 박스가 4개씩 3줄 생긴다.
+		 스마트폰 사이즈(ms)에서는 가로를 6씩 차지하기 때문에 오렌지 박스가 2개씩 6줄 생긴다.-->
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">1</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">2</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">3</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">4</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">5</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">6</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">7</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">8</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">9</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">10</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">11</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">12</div>
+
+</div>
+<div class="row">
+	<!-- palegreen(row2) 
+		데스크탑 사이즈(lg)에서는 가로를 2씩 차지하므로 페일그린 박스가 1줄에 6개 다 담긴다. 
+	     노트북 사이즈(md)에서는 가로를 4씩 차지하므로 페일그린 박스가 2줄에 3개씩 담긴다.
+		 태플릿 사이즈(sm)에서는 가로를 6씩 차지하므로 페일그린 박스가 3줄에 2개씩 담긴다.
+		 스마트폰 사이즈(ms)에서는 가로를 12씩 차지하므로 페일그린 박스가 6줄에 1개씩 담긴다.-->
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">1</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">2</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">3</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">4</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">5</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">6</div>
+</div>
+<div class="row">
+	<!-- skyblue(row3)은 스마트폰(ms)에서 숨겨진 상태이며, 데스크탑(lg)에서 2,4,4,2의 가로를,
+		 노트북(md)과 태블릿(sm)에서 에서 1,5,5,1의 가로 사이즈(비율)를 가진다.-->
+	<div class="row3 col-lg-2 col-md-1 col-sm-1 hidden-xs">1</div>
+	<div class="row3 col-lg-4 col-md-5 col-sm-5 hidden-xs">2</div>
+	<div class="row3 col-lg-4 col-md-5 col-sm-5 hidden-xs">3</div>
+	<div class="row3 col-lg-2 col-md-1 col-sm-1 hidden-xs">4</div>
+	
+	<!-- pink(for-xs)는 데스크탑(lg), 노트북(md), 태블릿(sm)에서 숨겨진 상태이며, 스마트폰(ms)에서 6씩 차지함. -->
+	<div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">1</div>
+	<div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">2</div>
+	<div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">3</div>
+	<div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">4</div>
+</div>
+
+
+</body>
+</html>

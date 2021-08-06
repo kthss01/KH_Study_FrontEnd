@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	       <!-- Latest compiled and minified CSS -->
+		   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+ 
+		   <!-- jQuery library -->
+		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		   <!-- Latest compiled JavaScript -->
+		   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+
+
+	<title>그리드 레이아웃</title>
+	<style>
+		.row1 {
+			border: 1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:100px;
+			background: orange;
+		}
+		.row2 {
+			border:1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:150px;
+			background: palegreen;
+		}
+		.row3 {
+			border:1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:200px;
+			background:skyblue;
+		}
+		.for-xs {
+			border:1px solid black;
+			font-size: 20px;
+			height:150px;
+			background:pink;
+		}
+		h3 {
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<h1 align="center">가변 그리드 레이아웃</h1>
+
+<!-- hidden-화면너비 (해당 크기일 때 감춘다.)  부트스트랩3 버전에서만 적용 기본값이 visible 이다
+			따라서 hidden속성만으로 조절이 가능하다.-->
+
+<!-- <h3 align="center" class="hidden-md hidden-sm hidden-xs">현재 화면은 데스크탑 전용입니다.</h3> 
+<h3 align="center" class="hidden-lg hidden-sm hidden-xs">현재 화면은 노트북 전용입니다.</h3>
+<h3 align="center" class="hidden-lg hidden-md hidden-xs">현재 화면은 태블릿 전용입니다.</h3>
+<h3 align="center" class="hidden-lg hidden-md hidden-sm">현재 화면은 스마트폰 전용입니다.</h3> -->
+<!-- 자신의 범위를 제외한 곳에서 안보이게 하고싶을 때 다 명시해준다. -->
+
+<!-- 부트스트랩 4 기준 적용 방법 -->
+<h3 align="center" class="d-none d-xl-block">현재 화면은 xl 크기 전용입니다.</h3>
+<h3 align="center" class="d-none d-xl-none d-lg-block">현재 화면은 lg 크기 전용입니다.</h3>
+<h3 align="center" class="d-none d-lg-none d-md-block">현재 화면은 md 크기 전용입니다.</h3>
+<h3 align="center" class="d-none d-md-none d-sm-block">현재 화면은 sm 크기 전용입니다.</h3>
+<h3 align="center" class=" d-block d-sm-none">현재 화면은 xs 크기 전용입니다.</h3>
+<!-- d-none : 감추기
+	 d-block : 보이기
+	 d-sm-block : sm크기부터 보이기
+	 d-sm-none: sm크기부터 안보이기 -->
+
+<br>
+
+<div class="row">
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">1</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">2</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">3</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">4</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">5</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">6</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">7</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">8</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">9</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">10</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">11</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-xs-6">12</div>
+</div>
+<!-- 싸이즈마다 컬럼 할당조건을 지정해 줄 수 있다. -->
+
+<div class="row">
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">1</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">2</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">3</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">4</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">5</div>
+	<div class="row2 col-lg-2 col-md-4 col-sm-6 col-xs-12">6</div>
+</div>
+<div class="row">
+
+	<!-- 블루 영역 부트스트랩 3  -->
+	<!-- xs 너비일 때는 보이지 않는다.   -->
+
+	<!-- <div class="row3 col-lg-2 col-md-1 col-sm-1 hidden-xs">1</div>
+	<div class="row3 col-lg-4 col-md-5 col-sm-5 hidden-xs">2</div>
+	<div class="row3 col-lg-4 col-md-5 col-sm-5 hidden-xs">3</div>
+	<div class="row3 col-lg-2 col-md-1 col-sm-1 hidden-xs">4</div> -->
+
+	<!-- 블루 영역 부트스트랩 4  -->
+	<!-- md 너비 일 때부터 보인다. 단, 초기 설정을 none 값으로 지정해줘야 한다. -->
+
+	<div class="row3 col-xl-2 col-lg-1 col-md-1 d-none d-md-block">1</div>
+	<div class="row3 col-xl-4 col-lg-5 col-md-5 d-none d-md-block">2</div>
+	<div class="row3 col-xl-4 col-lg-5 col-md-5 d-none d-md-block">3</div>
+	<div class="row3 col-xl-2 col-lg-1 col-md-1 d-none d-md-block">4</div>
+
+	<!-- d-none : 감추기
+	 d-block : 보이기
+	 d-sm-block : sm크기부터 보이기
+	 d-sm-none: sm크기부터 안보이기 -->
+		
+
+
+
+	<!-- 핑크 영역 부트스트랩 3  -->
+	<!-- xs 너비일 때만 보인다. -->
+
+	<!-- <div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">1</div>
+	<div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">2</div>
+	<div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">3</div>
+	<div class="row3 for-xs hidden-lg hidden-md hidden-sm col-xs-6">4</div> -->
+
+	<!-- 핑크 영역 부트스트랩 4  -->			
+	<!-- xs 너비일 때만 보인다. -->
+
+	<div class="row3 for-xs d-block d-md-none col-6">1</div>
+	<div class="row3 for-xs d-block d-md-none col-6">2</div>
+	<div class="row3 for-xs d-block d-md-none col-6">3</div>
+	<div class="row3 for-xs d-block d-md-none col-6">4</div>
+
+		<!-- hidden : 너비마다 각 각 조건을 설정해 주는 반면, 
+		d-block/d-none은 이상.이하의 개념으로 조건을 걸어줄 수 있음
+		
+		ex)
+			hidden-md : md 사이즈일 때 감추기
+			d-md-none : md 사이즈부터 감추기 
+	
+	-->
+</div>
+
+</body>
+</html>

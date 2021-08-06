@@ -1,0 +1,260 @@
+﻿<!-- 
+    bootstrap : 빠르고 쉬운 웹 개발을 위한 프론트엔드 프레임워크
+                HTML 및 CSS 기반 디자인 템플릿과 javascript 플러그인이 포함되어있다.
+    <장점>
+    1. 사용하기 쉽다
+    2. 반응형 기능, 반응형 웹 디자인 : 소형에서 대형까지 모든 장치에서 잘 보이도록 자동으로 조정되는 웹 사이트
+    3. 모바일 우선 접근 방식
+    4. 브라우저 호환성
+-->
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--
+        viewport : 웹 페이지의 크기 결정
+        width=device-width : 장치의 화면 폭을 따라 페이지의 폭을 설정
+        initial-scale=1 : 브라우저에서 페이지를 처음 로드할 때 초기 확대/축소 수준 설정
+        shrink-to-fit=no : 아이폰, 사파리를 위한 속성, 
+                            Safari가 viewport 크기보다 콘텐츠 크기가 크면 자동으로 shrink(줄어들다)되어서
+                            콘텐츠의 크기를 화면에 꽉채워 표시하기 때문에 이 속성을 방지하기 위해 사용
+    -->
+    <title>Test Bootstrap</title>
+  
+    <link rel="stylesheet" href="../resource/css/common.css">
+    <!-- 
+        <bootstrap의 기능을 웹페이지 적용하려면 반드시 그 페이지에 포함되어야 하는 3가지>
+        1. bootstrap.css : 부트스트랩의 스타일. 압축된 형태이인 bootstrap.min.css가 포함되어도 좋다.
+        2. jquery : jquery library. jquery 없이 bootstrap은 돌아가지 않는다.
+        3. popper.js : 이 또한 jquery와 같이 웹어플리케이션을 만들 때 사용되는 라이브러리이다.
+     -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid bg-dark">
+        
+        <!-- 
+            <container>
+                Bootstrap은 콘텐츠를 감싸는 wrapping 요소(container)를 포함해야 하고
+                container는 그리드 시스템의 필수 요소이다.
+                .container와 .container-fluid로 나뉜다.
+                container에는 기본적으로 상단 or 하단 패딩이 없이 15px의 좌우 패딩이 존재한다.
+
+                    + 그리드 시스템 : .container와 .container-fluid는 콘텐츠 요소를 포함하는 부모 요소.
+                                    container 또는 wrapping 요소라고 부른다.
+                                    그리드 시스템은 열을 나누어 콘텐츠를 원하는 위치에 배치하는 방법(Layout).
+                                    Bootstrap은 반응형 12열 그리드 시스템을 제공한다.
+
+
+                * .container : fixed-width(고정폭 레이아웃/반응형 고정폭 레이아웃 제공)
+                            Media query에 의해 반응형으로 동작하며
+                            동일 breakpoint내에서는 viewport 너비가 늘어나거나 줄어들어도 고정폭을 갖는다.
+
+                            + .container-sm|md|lg|xl클래스를 사용하여 반응형 컨테이너를 만들 수 있다.
+                                - .container-sm
+                                    가로 해상도 576px 미만에서는 100%
+                                    576px 이상에서는 540px
+                                    768px 이상에서는 720px
+                                    992px 이상에서는 960px
+                                    1200px 이상에서는 1140px의 가로폭을 가짐.
+
+                                - .container-md
+                                    가로 해상도 576px 미만에서는 100%
+                                    576px 이상에서는 100%
+                                    768px 이상에서는 720px
+                                    992px 이상에서는 960px
+                                    1200px 이상에서는 1140px의 가로폭을 가짐.
+
+                                - .container-lg
+                                    가로 해상도 576px 미만에서는 100%
+                                    576px 이상에서는 100%
+                                    768px 이상에서는 100%
+                                    992px 이상에서는 960px
+                                    1200px 이상에서는 1140px의 가로폭을 가짐.
+                                
+                                - .container-xl
+                                    가로 해상도 576px 미만에서는 100%
+                                    576px 이상에서는 100%
+                                    768px 이상에서는 100%
+                                    992px 이상에서는 100%
+                                    1200px 이상에서는 1140px의 가로폭을 가짐.
+
+
+                * .container-fluid : full-width (유동 최대폭 레이아웃, 즉 좌우로 꽉 찬 레이아웃 만들 때 사용함)
+                                    viewport 너비에 상관없이 언제나 콘텐츠 요소를 화면에 꽉차는 너비를 갖게 한다.
+
+
+                * .container와 .container-fluid의 차이점
+                    - .container : Media query에 의해 반응형 동작한다.
+                                가로 해상도 576px 미만에서는 100%
+                                576px 이상에서는 540px
+                                768px 이상에서는 720px
+                                992px 이상에서는 960px
+                                1200px 이상에서는 1140px의 가로폭을 가짐.
+                                (https://www.w3schools.com/bootstrap4/bootstrap_containers.asp)
+
+                    - .container-fluid : 가로폭이 항상 100%이다.
+
+
+                * bg-dark : 배경색을 검은색으로.
+         -->
+        <header>
+            <div class="row">
+                <!-- Bootstrap row 란? -->
+                <!-- 
+                    
+                row 는 큰 컨테이너 박스 안에서 활용하수 있는 것으로
+                컬럼을 묶어주는 기능을 한다. 각 컬럼은 좌우 패딩이 들어가 있다
+                row 기본적으로 12개 가있고 우리가 필요한 만큼 가져와 사용할수있다.
+
+                플랙스박스로 정의되어서 브라우저 사이즐 줄이면 row 가 자연스럽게 아래로
+                붙게된다. 
+
+                컬럼은 rows 의 자식 요소로 적용될 수 있다. 
+
+                따라서 원하는 레이아웃을 생성하려면 컨테이너( <div class="container">)를 
+                생성합니다 . 다음으로 행( <div class="row">)을 생성합니다 . 
+                그런 다음 원하는 수의 열(적절한 .col-*-*클래스가 있는 태그)을 추가합니다  
+                참고할수 있는 youtube : https://youtu.be/Q6szlOTfv7M -->
+                <h1>Test Bootstrap</h1> 
+            </div>
+            <!--0. 네비게이션바의 기본 설정은 <nav class="navbar"> --> 
+            <!--1.navbar 라는 클래스를 추가함 
+                2.navbar-expand: 크기지정 (xl,lg,md,sm) 크기순으로 sm은 제일작은 사이즌데 메뉴가 세로로 정렬됨  575픽셀 이하는 세로정렬 576 이상은 정렬됨 -->
+            <!--3.bg-원하는 컬러 (primary-파란색, success-초록, danger-빨강, warning-노랑, info-청초록, secondery-회색 dark,light 등 ) -->
+            <!--navbar-dark: 글자색 화이트, navbar-light: 글자색 블랙 --> 
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <ul class="navbar-nav mr-auto myNav">
+                    <!--navbar-nav: 탐색 모음 내부에 링크를 추가하려면 가 있는 <ul>요소를 사용, 네비 메뉴의 요소를 나타냄.-->
+                    <!--mr-auto : margin right auto 라는 뜻. 따라서 2개의 ul 요소를 서로 떼어 놓기 위한 코드-->
+                    <!-- <li class="nav-item active"> 처럼 active 라는 클래스 추가하면 해당 요소가 굵게 표시됨 -->
+                    <!-- <a class="nav-link disabled" href="#">Disabled</a> 처럼 li 안에 있는 a태그에 disabled 걸면 클릭안됨--> 
+                    <li class="nav-item active"><a class="nav-link" href="myPage.html">Navigation 1</a></li>
+                    <!--nave-item: li에 요소 추가--> <!--nav-link: a 태그에 링크요소 추가 -->
+                    <li class="nav-item"><a class="nav-link" href="views/GridLayout.html">그리드 레이아웃</a></li>
+                    <li class="nav-item"><a class="nav-link" href="views/Size.html">가변 사이즈 활용</a></li>
+                </ul>
+                <!--https://www.codeit.kr/community/threads/7067 (참조)-->
+                <!--https://min-blog.tistory.com/1865 (추가 자주쓰는 토글(on/off버튼 같은거),아코디언 사용법 )-->
+
+            </nav>
+        </header>
+        <div class="row">
+            <section class="col-sm-8">
+
+                    <!-- 부트스트랩 4 그리드 시스템
+                        Bootstrap의 그리드 시스템은 flexbox로 구축되었으며 페이지 전체에 최대 12개의 열을 허용합니다.(한 row마다 12개의 열 허용)
+                        12개의 열을 모두 개별적으로 사용하지 않으려면 열을 그룹화하여 더 넓은 열을 만들 수 있습니다.
+                        (즉 12개의 열을 모두 명시하는 대신 3개의 열 너비를 가진 요소를 4개 만들면 전체 화면 너비 차지한다.)
+                        (컬럼이 12개 초과될 경우 다음 행에 표시된다.)
+                        그리드 시스템은 반응형이며 열은 화면 크기에 따라 자동으로 재정렬됩니다.(!!!)
+                        합계가 12개 이하인지 확인합니다.(사용가능한 열 12개를 모두 사용할 필요는 없다)
+
+                        그리드 시스템을 이용해 모바일과 다양한 크기에 PC 모니터에서도 적용 가능한 웹을 만들 수 있다.
+                    
+                        Bootstrap 4 그리드 시스템에는 5가지 클래스가 있다.
+                        .col- (초소형 기기 - 화면 너비가 576px 미만)    /폰
+                        .col-sm- * (소형 기기 - 화면 너비가 576px 이상) /태블릿
+                        .col-md- * (중형 기기 - 화면 너비가 768px 이상) /노트북
+                        .col-lg- * (대형 기기 - 화면 너비가 992px 이상) /desktop
+                        .col-xl- * (xlarge 장치 - 화면 너비가 1200px 이상)  / desktop
+
+                        * col : 동일한 너비의 열 생성
+                        * sm, md, lg -> 응답성(responsiveness)
+                        * '* ' ->  숫자, 컬럼 너비, 각 행에 대해 최대 12개
+                            * 같은 너비의 3개의 칼럼을 만들고 싶다면 .col-xs-4칼럼을 3개 사용하면 된다.
+                        * col -- class 가 선언된 요소는 viewport width에 따라 수평정렬 상태에서 수직정렬상태로 변경된다.
+                            * 화면 너비가 클래스에 명시된 길이보다 작아지면 -> 자동으로 서로 겹쳐진다.
+
+                        위의 클래스들을 결합하여 보다 동적이고 유연한 레이아웃을 만들 수 있다.
+                        각 클래스는 모두 확장이 되기 때문에 명시만 해줘도 동일한 너비를 만들 수 있다.
+                    
+                    -->
+               Section Part<br>
+                <div class="card col-sm-5 content"> test 1 </div>
+                <div class="card col-sm-5 content"> test 2 </div>
+                <div class="card col-sm-10 content" style="margin-top:10px; margin-bottom: 25px;"> test 3 </div>
+                <!-- 
+                    card 
+                    : 내용 주위에 padding이 있는 테두리가 있는 상자입니다. 
+                    여기에는 머리글, 바닥글, 콘텐츠, 배경색상 등에 대한 옵션이 포함
+
+                    1. 기본형
+                    card 클래스로 생성되며 카드 내부의 콘텐츠에는 .card-body 클래스가 있다
+
+                    2. 머리글과 바닥글
+                    card 클래스 안에 card-header(카드 머리글), card-body(카드 내용), card-footer(바닥글)
+
+                    3. 배경 추가
+                    bg-primary(파랑), bg-success(초록), bg-info(청록), bg-warning(노랑), bg-danger(빨강), bg-secondary(회색), bg-dark(검정) bg-light(하양)
+                    
+                    4. 카드 제목, 텍스트 및 링크
+                    card-title : 카드 제목, <h*>태그와 사용
+                    card-subtitle : 카드 자막, 부제목 ,<h*>태그와 사용
+                    card-text : 마지막 자식 내부인 경우 <p>요소 아래쪽 여백을 제거하기 위해 사용, <p>태그와 사용
+                    card-link : 링크에 파란색, 마우스 올리면 손가락으로 변하는게 기본, <a>태그와 사용
+
+                    5. 카드 이미지
+                    card-img-top / card-img-bottom : <img>태그를 안에 추가하여 카드 내부의 상단 또는 하단에 배치
+
+                    6. 카드 이미지 링크 (늘어난 링크)
+                    stretched-link : 전체 카드를 클릭할 수 있고 hovering 가능, 카드가 링크 역할을 함
+
+                    7. 카드 이미지 오버레이
+                    card-img-overlay : 이미지를 카드 배경으로 바꾸고 overlay 된 후 텍스트를 추가하여 사용 (카드 배경 위에)
+
+                    8. 카드 열(columns)
+                    card-columns : 그리드를 만든다. 더 많은 카드를 삽입하면 레이아웃이 자동으로 조정
+                    -> 작은 화면 (576px 미만)에서는 세로로 표시된다.
+
+                    9. 카드 데크
+                    card-deck : 높이와 너비가 같은 카드 그리드 생성
+
+                    10. 카드 그룹
+                    card-group : card-deck와 유사, 차이점은 각 카드 사이의 왼쪽 및 오른쪽 여백을 제거
+
+                    11. 카드 list 그룹
+                    list-group : 카드 안에 리스트카드 생성, <ul>태그와 사용
+                    list-group-item : 각각의 리스트 item들, <li>태그와 사용
+        
+                    12. 카드 Text alignment
+                    card-text : 왼쪽 정렬, 기본정렬
+                    card text-center : 가운데 정렬
+                    card text-right : 오른쪽 정렬
+                -->
+            </section>
+            <!--class="col-sm-8" : 12개 열 중 8개 열만큼 자리 차지. 위에서 com-sm-4이었으므로 전체 합이 12가 되어 화면 전체 너비 차지-->
+            <!--sm 이기 때문에 화면을 최소로 줄였을 때보다 px이 커서 수직으로 정렬되지 않는다. 만약 md라면 동일하게 화면의 크기를 줄이면 수직정렬된다.-->
+            <aside class="col-sm-4">
+                <p>Aside Content 1</p>
+                <p>Aside Content 2</p>
+                <p>Aside Content 3</p>
+                <p>Aside Content 4</p>
+            </aside>
+        </div>
+        <footer class="row"> 
+            <!--클래스명이 col-md-12 : 12개 열 모두 사용하겠다. 최대 12개 열까지 사용가능하므로 화면의 전체 너비가 된다.-->
+            <div class="col-md-12">
+                Copyright by J <br> 
+                <!-- 큰 화면에서는 (md) 4개로 나오고 작은 화면에서는(sm) 2개로 나옴
+                <div class="row"> 
+                    <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> 
+                    <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> 
+                    <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> 
+                    <div class="col-md-3 col-sm-6">.col-md-3 .col-sm-6</div> 
+                </div> -->
+            </div>
+        </footer>
+    </div>
+    </body>
+
+</html>

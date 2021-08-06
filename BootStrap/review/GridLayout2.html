@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<title>그리드 레이아웃</title>
+	<style>
+		.row1 {
+			border: 1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:100px;
+			background: orange;
+		}
+		.row2 {
+			border:1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:150px;
+			background: palegreen;
+		}
+		.row3 {
+			border:1px solid black;
+			padding-top: 15px;
+			padding-left: 25px;
+			font-size: 20px;
+			height:200px;
+			background:skyblue;
+		}
+		.for-xs {
+			border:1px solid black;
+			font-size: 20px;
+			height:150px;
+			background:pink;
+		}
+		h3 {
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<h1 align="center">가변 그리드 레이아웃</h1>
+<!-- 부트스트랩 4 활용 -->
+
+<!-- d-none : 다 숨기기, d-block : 다 보이기, d-size-block, d-size-none으로 컨트롤 가능 -->
+<h3 align="center" class="d-none d-xl-block">현재 화면은 매우 큰기기 전용입니다.</h3>
+<!-- 다 숨기고, xl는 보이기 -->
+<h3 align="center" class="d-none d-lg-block d-xl-none">현재 화면은 큰기기 전용입니다.</h3>
+<!-- 다 숨기고, lg 보이고, xl 이상 숨기기 -->
+<h3 align="center" class="d-none d-md-block d-lg-none">현재 화면은 중간기기 전용입니다.</h3>
+<!-- 다 숨기고, md 보이고, lg 이상 (lg, xl)숨기기 -->
+<h3 align="center" class="d-none d-sm-block d-md-none">현재 화면은 작은기기 전용입니다.</h3>
+<!-- 다 숨기고, sm 보이고, md 이상 (md, lg, xl)숨기기 -->
+<h3 align="center" class="d-block d-sm-none">현재 화면은 매우작은 기기 전용입니다.</h3>
+<!-- 다 보여주고 sm 이상일때 숨기기 -->
+<br>
+
+<!-- bs3은 lg md sm xs로 나누고, bs4는 xl lg md sm -(xm) 로 나눈다 -->
+
+<div class="row">
+	<!-- lg 사이즈에서는 가로를 1씩 차지하기 때문에 오렌지 박스가 1줄 12개가 다 담긴다.
+		 md 사이즈에서는 가로를 2씩 차지하기 때문에 오렌지 박스가 6개식 2줄 생긴다.
+		 sm 사이즈에서는 가로를 3씩 차지하기 때문에 오렌지 박스가 4개씩 3줄 생긴다.
+		 -(xs) 사이즈에서는 가로를 6씩 차지하기 때문에 오렌지 박스가 2개씩 6줄 생긴다.
+		 xl 사이즈에서는 가로를 2씩 차지하기 때문에 오렌지 박스가 6개식 2줄 생긴다.
+	 	 -->
+
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">1</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">2</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">3</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">4</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">5</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">6</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">7</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">8</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">9</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">10</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">11</div>
+	<div class="row1 col-lg-1 col-md-2 col-sm-3 col-6 col-xl-2">12</div>
+</div>
+
+</body>
+</html>

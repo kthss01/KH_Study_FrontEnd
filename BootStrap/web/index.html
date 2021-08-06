@@ -1,0 +1,137 @@
+﻿<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- 
+        viewport : 웹 페이지의 크기 결정
+        width=device-width : 장치의 화면 폭을 따라 페이지의 폭을 설정
+        initial-scale=1 : 브라우저에서 페이지를 처음 로드할 때 초기 확대/축소 수준 설정
+        shrink-to-fit=no : 아피폰, 사파리를 위한 속성,
+                        Safari가 viewport 크기보다 콘텐츠 크기가 크면 자동으로 shrink(줄어들다) 되어서
+                        콘텐츠의 크기를 화면에 꽉 채워 표시하기 때문에 이 속성을 방지하기 위해 사용
+     -->
+
+    <title>Test Bootstrap</title>
+
+    <link rel="stylesheet" href="../resource/css/common.css">
+
+    <!-- 
+        <bootstrap의 기능을 웹페이지에 적용하렴녀 반드시 그 페이지에 포함되어야 하는 3가지>
+        1. bootstrap.css : 부트스트랩의 스타일. 압추된 형태인 bootstramp.min.css가 포함되어 있음
+        2. jquery : jquery library. jquery 없이 bootstrap은 돌아가지 않음
+        3. popper.js : 이 또한 jquery와 같이 웹어플리케이션을 만들 때 사용하는 라이브러리
+          3.0 때는 필요없었는데 4.0부턴 꼭 포함되어야 한다고 함
+    -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid bg-dark">
+
+        <!-- 
+            Bootstrap은 콘텐츠를 감싸는 wrapping 요소 (container)를 포함해야 하고
+            container는 그리드 시스템의 필수 요소이다
+            .container와 .container-fluid로 나뉜다.
+            container에는 기본적으로 상단 or 하단 패딩이 없이 15px의 좌우 패딩이 존재한다.
+
+            .container도 -sm|md|lg|xl 클래스를 사용하여 반응형 컨테이너를 만들 수 있다
+
+            bg-dark : 배경색을 검은색으로
+         -->
+
+        <header>
+            <div class="row">
+                <!-- 
+                    row는 큰 컨테이너 박스 안에서 활용할 수 있는 것으로
+                    컬럼을 묶어주는 기능을 한다. 각 컬럼은 좌우 패딩이 들어가 있다.
+                 -->
+                <h1>Test Bootstrap</h1>
+            </div>
+            <!-- 네비게이션바 기본 설정 navbar 클래스 추가
+                navbar-expand - 크기 지정
+                bg-원하는 컬러 
+                navbar-dark : 글자색 화이트, navbar-light : 글자색 블랙
+            -->
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <ul class="navbar-nav mr-auto myNav">
+                    <!-- 
+                        navbar-nav : 탐색 모음 내부에 링크를 추가하려면 <ul> 요소 사용 네비 메뉴의 요소를 나타냄
+                        mr-auto : margin right auto라는 뜻. 따라서 2개의 ul 요소를 서로 떼어 놓기 위한 클래스
+
+                        <li class="nav-item active"> 해당 요소 굵게 표시
+                        <a class="nav-link disabled" ~ > disabled 걸면 비활성화
+                     -->
+                    <li class="nav-item active"><a class="nav-link" href="myPage.html">Navigation 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="views/GridLayout.html">그리드 레이아웃</a></li>
+                    <li class="nav-item"><a class="nav-link" href="views/Size.html">가변 사이즈 활용</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="row">
+            <section class="col-sm-8">
+                Section Part<br>
+                <div class="card col-sm-5 content"> test 1 </div>
+                <div class="card col-sm-5 content"> test 2 </div>
+                <div class="card col-sm-10 content" style="margin-top:10px; margin-bottom: 25px;"> test 3 </div>
+
+                <!-- card
+                    : 내용 주위에 padding이 있는 테두리가 있는 상자
+                    여기에 머리글, 바닥글, 콘텐츠, 배경색상 등에 대한 옵션이 포함
+
+                    기본형
+                        card 클래스로 생성, 카드 내부의 콘텐츠에는 .card-body 클래스가 있음
+                    머리글과 바닥글
+                        card 클래스 안에 card-header, card-body, card-footer
+                    카드 제목, 텍스트 및 링크
+                        card-title
+                        card-subtitle : 카드 자막, 부제목
+                        card-text : 마지막 자식 내부인 경우 <p> 요소 아래쪽 여백을 제거하기 위해 사용
+                        card-link : 링크에 파란색, 마우스 올리면 손가락으로 변하는게 기본 <a> 태그와 사용
+                    카드 이미지
+                        card-img-top / card-img-bottom : <img> 태그를 안에 추가하여 카드 내부의 상단 또는 하단에 배치
+                    카드 이미지 링크 (늘어난 링크)
+                        stretched-link : 전체 카드를 클릭할 수 있고 hovering 가능, 카드가 링크 역할을 함
+                    카드 이미지 오버레이
+                        card-img-overlay : 이미지를 카드 배경으로 바꾸고 overlay 된 후 텍스트를 추가하여 사용 (카드 배경 위에)
+                    카드 열(columns)
+                        card-columns : 그리드를 만듬. 더 많은 카드를 삽입하면 레이아웃이 자동으로 조정 
+                    카드 데크
+                        card-deck : 높이와 너비가 같은 카드 그리드 생성
+                    카드 그룹
+                        card-group : card-deck와 유사, 차이점은 각 카드 사이의 왼쪽 및 오른쪽 여백을 제거
+                    카드 list 그룹
+                        list-group : 카드 안에 리스트카드 생성, <ul>태그와 사용
+                        list-group-item : 각각의 리스트 item들, <li>태그와 사용
+        
+                    카드 Text alignment
+                        card-text : 왼쪽 정렬, 기본정렬
+                        card text-center : 가운데 정렬
+                        card text-right : 오른쪽 정렬
+                -->
+
+            </section>
+            <aside class="col-sm-4">
+                <p>Aside Content 1</p>
+                <p>Aside Content 2</p>
+                <p>Aside Content 3</p>
+                <p>Aside Content 4</p>
+            </aside>
+        </div>
+        <footer class="row">
+            <div class="col-md-12">
+                Copyright by J <br>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

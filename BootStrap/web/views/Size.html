@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<title>가변크기 활용하기</title>
+	<style>
+		div div {
+			border: 1px solid black;
+			padding: 0px;
+		}
+
+		img {
+			width: 100%;
+			height: 150px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 align="center">가변크기 활용하기</h1>
+
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-5"><img src="../../resource/image/flower1.PNG" class="img-responsive"></div>
+		<div class="col-lg-5"><img src="../../resource/image/flower3.PNG" class="img-responsive"></div>
+		<div class="col-lg-1"></div>
+	</div>
+
+	<!-- 
+		Grid System 
+		12 column으로 하나의 row로 잡아서 행 열 처럼 페이지 레이아웃을 만드는 방법
+
+		col-*-*
+		첫 * 기기에 맞춰서 사이즈가 잡혀있는데 xs (부트스트랩 4부터 사라짐 기본이 xs)
+		sm md lg xl 순인데
+		이 사이즈 기준보다 커야 Grid System이 먹힌다는 얘기
+
+		두번째 * 
+		숫자를 작성하며 1 ~ 12 씀 12가 한 줄 다임 12 열로 나눠서 크기 조정한다고 보면 됨
+		col-12 하면 한 줄이 다됨 (안쓰면 xs 보다 크면 다 먹힌다는 얘기)
+		안쓰면 자동으로 잡아줌
+
+		부트스트랩 4에서는
+		xl 1200px 이상임
+
+		실제 컨텐트가 담기는 최고 너비가 이 기준과 다를 수 있음
+		이때는 이미지 자체 너비에 px 값을 주면 된다고 함
+	 -->
+
+</body>
+
+</html>
